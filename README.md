@@ -1,3 +1,3 @@
 # ultrasonic_level_sensor
-HCSR04 based Liquid Level Sensor with lcd shield.
+Ultrasonic Level Sensor with LCD Display.
 connctions are documented in arduino code itself.
