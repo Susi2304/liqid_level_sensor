@@ -2,8 +2,8 @@
 #include<EEPROM.h>
 #define TRIG  A1
 #define ECHO  A2
-#define COIL A4
-#define ALARM A3
+#define COIL A3
+#define ALARM A4
 #define repeat 20
 #define BOTTOM_BYTE_1 1
 #define BOTTOM_BYTE_2 2
@@ -21,6 +21,7 @@ float reading[repeat];
 //2-menu
 //3-parameters
 //4-fault
+//5-credits
 LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
 void setup() {
   //factoryReset();
@@ -45,6 +46,7 @@ void loop() {
   getButton();
   if ((state == 0 || state == 4) && button == 4)state = 1;
   if ((state == 0 || state == 4) && button == 1)state = 3;
+  if ((state == 0 || state == 4) && button == 3)state = 5;
   show();
   delay(100);
   //serialOut();
@@ -161,6 +163,11 @@ void show() {
   else if (state == 4) {
     fault = true;
     lcd.print("Fault");
+  }
+   else if (state == 5) {
+    lcd.print("Desined By:");
+    lcd.setCursor(0, 1);
+    lcd.print("Sushant Tiwari");
   }
 
 }
