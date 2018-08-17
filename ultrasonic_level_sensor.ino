@@ -4,7 +4,7 @@
 #define ECHO  A2
 #define COIL A3
 #define ALARM A4
-#define repeat 20
+#define repeat 10
 #define BOTTOM_BYTE_1 1
 #define BOTTOM_BYTE_2 2
 #define TOP_BYTE_1 3
